@@ -49,6 +49,10 @@ my %methods = (
             'pornstars/female',
             sub { ( my $baby = shift ) =~ s/_.*$//; $baby }
         ],
+        meeting_room => [
+            'I think this meeting room should be called %s',
+            'barbapapa/nl'
+        ],
     )x!! ( $Acme::MetaSyntactic::VERSION >= 1.011 ),
 );
 
@@ -129,6 +133,12 @@ BooK has no imagination for naming his kids.
 BooK is really clever.
 
     my $code_quote = $bitch->code();
+
+=head3 meeting_room
+
+BooK had a clever scheme for naming meeting rooms. Nobody ever listened.
+
+    my $meeting_room_quote = $bitch->meeting_room();
 
 =head3 next_talk
 
