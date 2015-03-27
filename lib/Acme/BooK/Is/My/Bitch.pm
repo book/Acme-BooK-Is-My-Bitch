@@ -40,7 +40,7 @@ my %methods = (
         'opcodes',
     ],
     'words_of_wisdom' => [
-        'My grandfather once told me: ' . join( " ", ('%s') x 7 ),
+        'My grandfather once told me:' . ' %s' x 7,
         'loremipsum',
     ],
     ( # quotes that need a theme/category
