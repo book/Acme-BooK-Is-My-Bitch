@@ -51,7 +51,7 @@ my %methods = (
         ],
         meeting_room => [
             'I think this meeting room should be called %s',
-            'barbapapa/nl'
+            [ 'barbapapa/nl', 'barbapapa/en' ],
         ],
     )x!! ( $Acme::MetaSyntactic::VERSION >= 1.011 ),
 );
@@ -62,7 +62,8 @@ for my $method ( keys %methods ) {
     my $qty =()= $template =~ /%s/g;
     no strict 'refs';
     *{$method} = sub {
-        return sprintf $template, $filter->( metaname( $theme => $qty ) );
+        my $th = ref $theme ? $theme->[rand @$theme] : $theme;
+        return sprintf $template, $filter->( metaname( $th => $qty ) );
     };
 }
 
