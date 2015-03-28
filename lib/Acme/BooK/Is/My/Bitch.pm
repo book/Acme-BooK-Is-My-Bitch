@@ -53,6 +53,11 @@ my %methods = (
             'I think this meeting room should be called %s',
             [ 'barbapapa/nl', 'barbapapa/en' ],
         ],
+        favourite_colour => [
+            'My favourite colour is %s',
+            [ 'colours/en', 'colours/x-11' ],
+            sub { my $colour = shift; return $colour =~ /pink|rose/i ? $de_underscore->( $colour ) : (); }
+        ]
     )x!! ( $Acme::MetaSyntactic::VERSION >= 1.011 ),
 );
 
@@ -136,6 +141,12 @@ BooK has no imagination for naming his kids.
 BooK is really clever.
 
     my $code_quote = $bitch->code();
+
+=head3 favourite_colour
+
+BooK has a favourite colour. A whole palette of it.
+
+    my $colour_quote = $bitch->favourite_colour();
 
 =head3 meeting_room
 
