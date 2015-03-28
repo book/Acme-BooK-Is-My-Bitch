@@ -63,7 +63,9 @@ for my $method ( keys %methods ) {
     no strict 'refs';
     *{$method} = sub {
         my $th = ref $theme ? $theme->[rand @$theme] : $theme;
-        return sprintf $template, $filter->( metaname( $th => $qty ) );
+        my @args;
+        @args = $filter->( metaname( $th => $qty ) ) while !@args;
+        return sprintf $template, @args;
     };
 }
 
