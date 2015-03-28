@@ -237,7 +237,7 @@ All reported bugs have been fixed, all requested features have been added.
 
 =head1 AUTHOR
 
-José Castro  C<< <cog@cpan.org> >>
+JosÃ© Castro  C<< <cog@cpan.org> >>
 
 =head1 MAINTAINER
 
